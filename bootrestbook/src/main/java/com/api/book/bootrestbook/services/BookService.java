@@ -2,6 +2,7 @@ package com.api.book.bootrestbook.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
@@ -33,4 +34,17 @@ public class BookService {
 
      return book;
      }
+     
+     //insert the record
+     public Book addBook(Book book)
+     {
+    	 ls.add(book);
+    	 return book;
+     }
+      //Delete
+	public void deleteBook(int bookId) {
+		// TODO Auto-generated method stub
+		ls = ls.stream().filter(e-> e.getId()!=bookId).collect(Collectors.toList());
+		
+	}
 }
