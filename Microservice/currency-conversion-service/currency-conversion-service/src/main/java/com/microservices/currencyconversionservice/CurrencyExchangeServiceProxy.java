@@ -12,9 +12,8 @@ import com.microservices.currencyexchangeservice.ExchangeValue;
 //@RibbonClient(name="currency-exchange-service")
 public interface CurrencyExchangeServiceProxy {
 
-	//@GetMapping("/currency-converter-feign/from/{from}/to/{to}/quantity/{quantity}") 
-	@GetMapping("/currency-exchange-service/currency-exchange/from/{from}/to/{to}") 
-	public ExchangeValue convertCurrencyFeign(@PathVariable String from, 
-			@PathVariable String to);
+	@GetMapping("/currency-exchange/from/{from}/to/{to}")       //where {from} and {to} are path variable  
+	public CurrencyConversionBean retrieveExchangeValue(@PathVariable("from") String from, @PathVariable("to") String to); //from map to USD and to map to INR  
+	 
 	
 }
