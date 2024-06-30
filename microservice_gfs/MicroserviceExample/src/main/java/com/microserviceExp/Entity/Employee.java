@@ -1,11 +1,16 @@
 package com.microserviceExp.Entity;
 
+
+
+import com.microserviceExp.response.AddressResponse;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name="employee")
@@ -25,6 +30,8 @@ public class Employee {
 	@Column(name="age")
 	private String age;
 	
+	@Transient
+	private AddressResponse addressResponse;
 	
 	
 	public Employee() {
@@ -34,6 +41,18 @@ public class Employee {
 	
 	
 	
+	public AddressResponse getAddressResponse() {
+		return addressResponse;
+	}
+
+
+
+	public void setAddressResponse(AddressResponse addressResponse) {
+		this.addressResponse = addressResponse;
+	}
+
+
+
 	public Employee(int id, String name, String email, String age) {
 		super();
 		this.id = id;

@@ -6,7 +6,16 @@ public class EmployeeResponse {
 	private String name;
 	private String email;
 	private String age;
+	private AddressResponse addressResponse;
 	
+	public AddressResponse getAddressResponse() {
+		return addressResponse;
+	}
+
+	public void setAddressResponse(AddressResponse addressResponse) {
+		this.addressResponse = addressResponse;
+	}
+
 	public EmployeeResponse() {
 		super();
 	}

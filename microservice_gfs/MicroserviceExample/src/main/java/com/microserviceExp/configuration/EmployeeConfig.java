@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.microserviceExp.feignclient.AddressClient;
 import com.microserviceExp.service.EmployeeService;
 
 @Configuration
@@ -20,5 +21,7 @@ public class EmployeeConfig {
 	{
 		return new ModelMapper();
 	}
+	
+
 
 }
